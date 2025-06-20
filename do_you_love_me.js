@@ -5,7 +5,7 @@ const heartLoader = document.querySelector(".cssload-main");
 const yesBtn = document.querySelector(".js-yes-btn");
 const noBtn = document.querySelector(".js-no-btn");
 
-// Move no button around randomly on hover
+// Move the "No" button to random positions on hover
 noBtn.addEventListener("mouseover", () => {
   const newX = Math.floor(Math.random() * questionContainer.offsetWidth);
   const newY = Math.floor(Math.random() * questionContainer.offsetHeight);
@@ -14,7 +14,7 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = `${newY}px`;
 });
 
-// Yes button click handler
+// When "Yes" is clicked
 yesBtn.addEventListener("click", () => {
   questionContainer.style.display = "none";
   heartLoader.style.display = "inherit";
@@ -22,6 +22,6 @@ yesBtn.addEventListener("click", () => {
   setTimeout(() => {
     heartLoader.style.display = "none";
     resultContainer.style.display = "inherit";
-    gifResult.play();
-  }, 3000);
+    gifResult.play(); // Play the result video
+  }, 3000); // Show result after 3 seconds
 });
